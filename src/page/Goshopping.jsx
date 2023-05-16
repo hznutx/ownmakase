@@ -1,5 +1,5 @@
-import React from "react";
 import Navbar from "../component/Navbar";
+import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Shoppingpic from "../image/Shoppingpic.png";
 import {
@@ -9,14 +9,13 @@ import {
   Checkbox,
   Grid,
   InputBase,
-  List,
   ListItem,
-  Paper,
   Stack,
   TextField,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import Groupbutton from "../component/Groupbutton";
 
 function Goshopping() {
   const [inputText, setInputText] = useState("");
@@ -57,7 +56,7 @@ function Goshopping() {
         alignContent="center"
         sx={{ flexDirection: { xs: "column", sm: "column", lg: "row" } }}
       >
-        <Grid item xs={12} sm={6} xl={4}>
+        <Grid item xs={12} sm={6} md={4}>
           <Typography variant="h5" m={3} align="center">
             Prepare for your meal
           </Typography>
@@ -68,7 +67,7 @@ function Goshopping() {
           item
           xs={12}
           sm={6}
-          xl={3}
+          md={4}
           sx={{
             display: "flex",
             padding: 2,
@@ -113,7 +112,7 @@ function Goshopping() {
               p: 2,
             }}
           >
-            <Typography justifyContent="space-between">
+            <Typography>
               <br />
               {toDoList.map((todo, index) => (
                 <Box key={index}>

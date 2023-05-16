@@ -9,7 +9,6 @@ import { Button, Container, Grid, Stack } from "@mui/material";
 import Pic from "../image/Mainpic.png";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-
 import React from "react";
 
 const Search = styled("div")(({ theme }) => ({

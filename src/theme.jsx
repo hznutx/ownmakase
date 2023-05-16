@@ -1,6 +1,5 @@
-import { createTheme, makeStyles } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import "@fontsource/kanit";
-import { InputBase, gridClasses } from "@mui/material";
 
 const theme = createTheme({
   palette: {
@@ -25,13 +24,7 @@ const theme = createTheme({
     },
     caption: { fontSize: "16px" },
   },
-  textField: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    paddingBottom: 0,
-    marginTop: 0,
-  },
-  input: { borderRadius: "20", outerHeight: "40px" },
+
   components: {
     MuiIcon: { styleOverrides: { palette: "#F6B969" } },
     MuiAppBar: {
@@ -47,7 +40,7 @@ const theme = createTheme({
 
     MuiButton: {
       styleOverrides: {
-        contained: {
+        containedPrimary: {
           fontSize: "20px",
           p: 20,
           background: "#8DC1EF",
@@ -57,6 +50,7 @@ const theme = createTheme({
         "&:hover": {
           backgroundColor: "#4c84b5",
           boxShadow: "0",
+          borderRadius: "25px",
         },
         outlinedPrimary: {
           color: "#909090",

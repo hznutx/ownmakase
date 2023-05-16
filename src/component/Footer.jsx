@@ -5,7 +5,6 @@ import ClassOutlinedIcon from "@mui/icons-material/ClassOutlined";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import { Paper } from "@mui/material";
-import { Link, matchPath } from "react-router-dom";
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);

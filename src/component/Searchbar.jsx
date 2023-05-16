@@ -1,10 +1,8 @@
-import AppBar from "@mui/material/AppBar";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import { Box, Button, Container, Grid, Link } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { ClassNames } from "@emotion/react";
 
-import React from "react";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   width: "100%",
@@ -22,9 +20,11 @@ const Search = styled("div")(({ theme }) => ({
   },
 }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
+const SearchIconWrapper = styled("button")(({ theme }) => ({
   marginLeft: 5,
   marginTop: 3,
+  border: 0,
+  backgroundColor: "white",
   height: "68%",
   position: "absolute",
   pointerEvents: "none",

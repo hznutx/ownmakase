@@ -1,11 +1,10 @@
-import React from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import Random from "../image/choice.png";
+import { Box, Stack, Typography } from "@mui/material";
 import { AddCircleRounded, RemoveCircle } from "@mui/icons-material";
-import { Button, TextField } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { Player } from "@lottiefiles/react-lottie-player";
+import React from "react";
 
 const Randommode = () => {
   return (
@@ -14,7 +13,7 @@ const Randommode = () => {
       <Box
         sx={{
           width: "100%",
-          my: 5,
+          my: 3,
           display: "grid",
           alignItems: "center",
           justifyItems: "center",
@@ -36,7 +35,7 @@ const Randommode = () => {
           <AddCircleRounded sx={{ color: "#F6B969" }} />
           <Typography variant="h6">meals</Typography>
         </Box>
-        <Box mb={5} display="flex" width={200} alignItems="center" gap={3}>
+        <Box mb={4} display="flex" width={200} alignItems="center" gap={3}>
           <RemoveCircle sx={{ color: "#F6B969" }} />
           <Button sx={{ color: "#8DC1EF" }} />
           <AddCircleRounded sx={{ color: "#F6B969" }} />

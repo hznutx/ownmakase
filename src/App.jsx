@@ -4,7 +4,7 @@ import Home from "./page/Home";
 import MenuPage from "./page/Menu";
 import RandomFood from "./page/Random";
 import ShoppingList from "./page/Goshopping";
-import { Stack, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import theme from "./theme.jsx";
 import React from "react";
 

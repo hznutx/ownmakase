@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../component/Navbar";
 import {
   Box,
@@ -16,6 +15,7 @@ import Recipepic from "../image/Recipes.png";
 import { ThemeProvider } from "@emotion/react";
 import { Link } from "react-router-dom";
 import Footer from "../component/Footer";
+import React from "react";
 
 const GridthemeItem = createTheme({
   components: {

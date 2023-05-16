@@ -6,15 +6,11 @@ import {
   IconButton,
   Typography,
   Badge,
-  List,
   ListItem,
-  Divider,
   ListItemIcon,
   ListItemButton,
   ListItemText,
   Drawer,
-  CssBaseline,
-  Paper,
 } from "@mui/material";
 import {
   MoveToInbox as InboxIcon,
