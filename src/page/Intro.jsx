@@ -142,6 +142,14 @@ function Intro() {
             <br />
             <Button
               component={Link}
+              to="/menu"
+              variant="contained"
+              sx={{ mr: 3, background: "#465670" }}
+            >
+              Fast recipes
+            </Button>
+            <Button
+              component={Link}
               to="/home"
               variant="contained"
               color="primary"

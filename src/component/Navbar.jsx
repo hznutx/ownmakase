@@ -48,16 +48,18 @@ const Navbar = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
+      {["Account", "Bookmark", "Inhouse Item", "My Recipes"].map(
+        (text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <AccountCircle /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        )
+      )}
     </Box>
   );
 
@@ -107,7 +109,7 @@ const Navbar = () => {
               Ownmakase
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
@@ -125,7 +127,7 @@ const Navbar = () => {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", md: "flex" } }}>
             <IconButton
               size="large"
               aria-label="show more"

@@ -42,6 +42,7 @@ const theme = createTheme({
       styleOverrides: {
         containedPrimary: {
           fontSize: "20px",
+
           p: 20,
           background: "#8DC1EF",
           borderRadius: "25px",
@@ -61,7 +62,6 @@ const theme = createTheme({
         },
         root: {
           textTransform: "capitalize",
-          fontWeight: 400,
           letterSpacing: 0.5,
         },
       },

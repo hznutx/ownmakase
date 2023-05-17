@@ -18,7 +18,7 @@ class GroupedButtons extends React.Component {
     return (
       <ButtonGroup size="small" aria-label="small outlined button group">
         <Button onClick={this.handleIncrement}>+</Button>
-        {displayCounter && <Button disabled>{this.state.counter}</Button>}
+        {displayCounter && <Button>{this.state.counter}</Button>}
         {displayCounter && <Button onClick={this.handleDecrement}>-</Button>}
       </ButtonGroup>
     );

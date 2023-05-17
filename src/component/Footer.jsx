@@ -1,13 +1,13 @@
-import * as React from "react";
 import RestaurantMenuOutlinedIcon from "@mui/icons-material/RestaurantMenuOutlined";
 import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
 import ClassOutlinedIcon from "@mui/icons-material/ClassOutlined";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import { Paper } from "@mui/material";
+import { useState } from "react";
 
 export default function SimpleBottomNavigation() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   return (
     <Paper

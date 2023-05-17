@@ -1,10 +1,11 @@
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { AddCircleRounded, RemoveCircle } from "@mui/icons-material";
 import { Button } from "@material-ui/core";
 import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
+import RandomMeal from "../component/Randommeal";
 
 const Randommode = () => {
   return (
@@ -28,33 +29,10 @@ const Randommode = () => {
           src="https://assets1.lottiefiles.com/temp/lf20_nXwOJj.json"
           style={{ height: "350px", width: "350px" }}
         />
-        {/* <img src={Random} /> */}
-        <Box my={3} display="flex" alignItems="center" width={200} gap={3}>
-          <RemoveCircle sx={{ color: "#F6B969" }} />
-          <Button sx={{ color: "#8DC1EF" }} />
-          <AddCircleRounded sx={{ color: "#F6B969" }} />
-          <Typography variant="h6">meals</Typography>
-        </Box>
-        <Box mb={4} display="flex" width={200} alignItems="center" gap={3}>
-          <RemoveCircle sx={{ color: "#F6B969" }} />
-          <Button sx={{ color: "#8DC1EF" }} />
-          <AddCircleRounded sx={{ color: "#F6B969" }} />
-          <Typography variant="h6">Day</Typography>
-        </Box>
-        <Button
-          variant="contained"
-          style={{
-            textTransform: "capitalize",
-            height: "50px",
-            fontSize: "20px",
-            p: 20,
-            background: "#A14686",
-            borderRadius: "25px",
-            color: "white",
-          }}
-        >
-          Random !
-        </Button>
+
+        <Grid>
+          <RandomMeal />
+        </Grid>
       </Box>
       <Footer />
     </Stack>

@@ -15,7 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import Groupbutton from "../component/Groupbutton";
+import Footer from "../component/Footer";
 
 function Goshopping() {
   const [inputText, setInputText] = useState("");
@@ -112,44 +112,42 @@ function Goshopping() {
               p: 2,
             }}
           >
-            <Typography>
-              <br />
-              {toDoList.map((todo, index) => (
-                <Box key={index}>
-                  <Checkbox /> {todo}
-                  <Button
-                    variant="text"
-                    onClick={() => setSelected({ id: index, todo })}
-                  >
-                    Edit
-                  </Button>
-                  <Button variant="text" onClick={() => deleteOnClick(index)}>
-                    Delete
-                  </Button>
-                </Box>
-              ))}
-              <br />
-              {!!selected.todo && selected.id >= 0 && (
-                <Box>
-                  <TextField
-                    variant="standard"
-                    value={selected.todo}
-                    onChange={(e) =>
-                      setSelected((prev) => ({
-                        ...prev,
-                        todo: e.target.value,
-                      }))
-                    }
-                  />
-                  <Button onClick={(e) => updateOnClick(selected.id)}>
-                    Update
-                  </Button>
-                </Box>
-              )}
-            </Typography>
+            {toDoList.map((todo, index) => (
+              <Typography key={index}>
+                <Checkbox /> {todo}
+                <Button
+                  variant="text"
+                  onClick={() => setSelected({ id: index, todo })}
+                >
+                  Edit
+                </Button>
+                <Button variant="text" onClick={() => deleteOnClick(index)}>
+                  Delete
+                </Button>
+              </Typography>
+            ))}
+            <br />
+            {!!selected.todo && selected.id >= 0 && (
+              <Box>
+                <TextField
+                  variant="standard"
+                  value={selected.todo}
+                  onChange={(e) =>
+                    setSelected((prev) => ({
+                      ...prev,
+                      todo: e.target.value,
+                    }))
+                  }
+                />
+                <Button onClick={(e) => updateOnClick(selected.id)}>
+                  Update
+                </Button>
+              </Box>
+            )}
           </Card>
         </Grid>
       </Grid>
+      <Footer />
     </Stack>
   );
 }
