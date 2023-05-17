@@ -19,32 +19,32 @@ import Footer from "../component/Footer";
 
 function Goshopping() {
   const [inputText, setInputText] = useState("");
-  const [toDoList, setToDoList] = useState([]);
-  const [selected, setSelected] = useState({ id: "", todo: "" });
+  const [ingredientList, setingredientList] = useState([]);
+  const [selected, setSelected] = useState({ id: "", ingredient: "" });
 
   const handleOnchange = (e) => {
     setInputText(e.target.value);
   };
   const handleOnClick = (e) => {
-    setToDoList((prev) => [...prev, inputText]);
+    setingredientList((prev) => [...prev, inputText]);
     setInputText("");
   };
 
   const deleteOnClick = (id) => {
     console.log(id);
-    let newState = toDoList.filter((todo, index) => {
+    let newState = ingredientList.filter((ingredient, index) => {
       if (index != id) {
-        return todo;
+        return ingredient;
       }
     });
-    setToDoList(newState);
+    setingredientList(newState);
   };
 
   const updateOnClick = () => {
-    let newState = toDoList;
-    newState[selected.id] = selected.todo;
-    setToDoList((prev) => (prev = newState));
-    setSelected({ id: "", todo: "" });
+    let newState = ingredientList;
+    newState[selected.id] = selected.ingredient;
+    setingredientList((prev) => (prev = newState));
+    setSelected({ id: "", ingredient: "" });
   };
 
   return (
@@ -112,12 +112,12 @@ function Goshopping() {
               p: 2,
             }}
           >
-            {toDoList.map((todo, index) => (
+            {ingredientList.map((ingredient, index) => (
               <Typography key={index}>
-                <Checkbox /> {todo}
+                <Checkbox /> {ingredient}
                 <Button
                   variant="text"
-                  onClick={() => setSelected({ id: index, todo })}
+                  onClick={() => setSelected({ id: index, ingredient })}
                 >
                   Edit
                 </Button>
@@ -127,15 +127,15 @@ function Goshopping() {
               </Typography>
             ))}
             <br />
-            {!!selected.todo && selected.id >= 0 && (
+            {!!selected.ingredient && selected.id >= 0 && (
               <Box>
                 <TextField
                   variant="standard"
-                  value={selected.todo}
+                  value={selected.ingredient}
                   onChange={(e) =>
                     setSelected((prev) => ({
                       ...prev,
-                      todo: e.target.value,
+                      ingredient: e.target.value,
                     }))
                   }
                 />

@@ -12,14 +12,10 @@ import {
   ListItemText,
   Drawer,
 } from "@mui/material";
-import {
-  MoveToInbox as InboxIcon,
-  Mail as MailIcon,
-  Notifications as NotificationsIcon,
-  AccountCircle,
-  Menu as MenuIcon,
-} from "@mui/icons-material";
-
+import { AccountCircle, Menu as MenuIcon } from "@mui/icons-material";
+import KitchenIcon from "@mui/icons-material/Kitchen";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import Logo from "../image/Logo.png";
 import { Link } from "react-router-dom";
 import theme from "../theme";
@@ -48,18 +44,24 @@ const Navbar = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      {["Account", "Bookmark", "Inhouse Item", "My Recipes"].map(
-        (text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <AccountCircle /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        )
-      )}
+      {["Account", "Bookmark", "Inhouse Item", "My Cart"].map((text, index) => (
+        <ListItem key={text}>
+          <ListItemButton>
+            <ListItemIcon>
+              {index % 4 === 0 ? (
+                <AccountCircle />
+              ) : index % 4 === 1 ? (
+                <BookmarkBorderIcon />
+              ) : index % 4 === 2 ? (
+                <KitchenIcon />
+              ) : (
+                <ShoppingCartIcon />
+              )}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItemButton>
+        </ListItem>
+      ))}
     </Box>
   );
 
@@ -115,9 +117,7 @@ const Navbar = () => {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
+              <Badge badgeContent={17} color="error"></Badge>
             </IconButton>
             <IconButton
               size="large"
