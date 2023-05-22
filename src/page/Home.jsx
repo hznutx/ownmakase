@@ -1,23 +1,14 @@
-import Navbar from "../component/Navbar";
-import {
-  Box,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  createTheme,
-} from "@mui/material";
-import SearchBar from "../component/Searchbar";
-import Random from "../image/choice.png";
-import Shoppingpic from "../image/Shoppingpic.png";
-import Bag from "../image/bag.png";
-import Recipepic from "../image/Recipes.png";
+import { Box, Container, Grid, Stack, Typography, createTheme, } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { Link } from "react-router-dom";
-import Footer from "../component/Footer";
-import React from "react";
+// 
+import SearchBar from "../component/Searchbar";
+import Random from "../assets/image/choice.png";
+import ShoppingPic from "../assets/image/Shoppingpic.png";
+import Bag from "../assets/image/bag.png";
+import RecipePic from "../assets/image/Recipes.png";
 
-const GridthemeItem = createTheme({
+const GridThemeItem = createTheme({
   components: {
     MuiGrid: {
       styleOverrides: {
@@ -28,7 +19,6 @@ const GridthemeItem = createTheme({
           justifyContent: "center",
           justifyItems: "center",
           wordSpacing: 3,
-          // border: "1px solid #EFEFF0",
           boxShadow: 2,
           p: 5,
           "&:hover": {
@@ -45,15 +35,7 @@ const GridthemeItem = createTheme({
 const Home = () => {
   return (
     <Stack sx={{ flexGrow: 1 }}>
-      <Navbar />
-      <Container
-        sx={{
-          alignContent: "center",
-          justifyContent: "center",
-          justifyItems: "center",
-          alignItems: "center",
-        }}
-      >
+      <Container>
         <Grid my={6}>
           <SearchBar />
         </Grid>
@@ -61,20 +43,11 @@ const Home = () => {
           What Would You like ?
         </Typography>
         <Box>
-          <ThemeProvider theme={GridthemeItem}>
-            <Grid
-              container
-              spacing={{ xs: 2, md: 2 }}
+          <ThemeProvider theme={GridThemeItem}>
+            <Grid container
+              spacing={2}
               columns={{ xs: 2, sm: 8, md: 12 }}
               padding={5}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignContent: "center",
-                alignItems: "center",
-                justifyItems: "center",
-                color: "#1A202C",
-              }}
             >
               <Grid
                 item
@@ -90,7 +63,7 @@ const Home = () => {
                 </Typography>
               </Grid>
               <Grid item xs component={Link} to="/shoppinglist">
-                <img src={Shoppingpic} width="100%" />
+                <img src={ShoppingPic} width="100%" />
                 <Typography variant="h6" my={3}>
                   Shopping List
                 </Typography>
@@ -102,7 +75,7 @@ const Home = () => {
                 </Typography>
               </Grid>
               <Grid item xs component={Link} to="/menu">
-                <img src={Recipepic} width="100%" />
+                <img src={RecipePic} width="100%" />
                 <Typography variant="h6" my={3}>
                   Recipes
                 </Typography>
@@ -111,7 +84,6 @@ const Home = () => {
           </ThemeProvider>
         </Box>
       </Container>
-      <Footer />
     </Stack>
   );
 };

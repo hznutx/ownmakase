@@ -8,7 +8,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import Recipepic from "../image/Recipes.png";
+import Recipepic from "../assets/image/Recipes.png";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import Searchbar from "../component/Searchbar";

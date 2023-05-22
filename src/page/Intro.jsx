@@ -1,15 +1,9 @@
-import AppBar from "@mui/material/AppBar";
+import { Button, Container, Grid, Stack, AppBar, Typography, InputBase, Box, Toolbar } from "@mui/material";
 import { styled, alpha } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Logo from "../image/Logo.png";
-import { Button, Container, Grid, Stack } from "@mui/material";
-import Pic from "../image/Mainpic.png";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-import React from "react";
+import Pic from "../assets/image/Mainpic.png";
+import Logo from "../assets/image/Logo.png";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -54,24 +48,10 @@ function Intro() {
       <AppBar position="static" sx={{ mt: 2, backgroundColor: "#fff" }}>
         <Toolbar>
           <img src={Logo} width={64} />
-
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              textTransform: "uppercase",
-              color: "#1A202C",
-            }}
-          >
+          <Typography variant="h6" noWrap component="div" sx={{ textTransform: "uppercase", color: "#1A202C", }}>
             Ownmakase
           </Typography>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-            }}
-          >
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Button component={Link} to="/menu" variant="outlined">

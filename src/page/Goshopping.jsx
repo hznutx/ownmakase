@@ -1,7 +1,7 @@
 import Navbar from "../component/Navbar";
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
-import Shoppingpic from "../image/Shoppingpic.png";
+import Shoppingpic from "../assets/image/Shoppingpic.png";
 import {
   Box,
   Button,
