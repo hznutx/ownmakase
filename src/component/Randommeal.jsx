@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import randommenu from "../assets/data/menurandom.json";
-import { Grid, Button, Typography, Card, Box } from "@mui/material";
+import { useState } from "react";
+import { Grid, Button, Typography, Card, Stack } from "@mui/material";
 import { RestaurantMenu } from "@mui/icons-material";
+// 
+import randommenu from "../assets/data/menurandom.json";
 
 const RandomMeal = () => {
   const [randomData, setRandomData] = useState([]);
-  const [rowCount, setRowCount] = useState(0);
+  const [rowCount, setRowCount] = useState(1);
 
   const getRandomtitle = () => {
     const randomIndex = Math.floor(Math.random() * randommenu.data.length);
@@ -32,48 +33,26 @@ const RandomMeal = () => {
   };
 
   return (
-    <Grid
-      container
-      flexDirection="column"
-      gap={2}
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Grid
-        item
-        xs
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        mt={4}
-      >
-        <Button
-          variant="contained"
-          style={{
-            borderRadius: "25px",
-            marginRight: 15,
-          }}
+    <Stack alignItems={'center'} gap={2}>
+      <Stack flexDirection={'row'} gap={2}>
+        <Button variant="contained"
+          style={{ borderRadius: "25px" }}
           onClick={() => handleAdjustRows("-")}
         >
           -
         </Button>
-        <Button variant="contained" disabled={!rowCount}>
+        <Typography textAlign={'center'} width={60} px={1} py={1.3} borderRadius={'25px'} color={'white'} bgcolor={!rowCount ? '#dedfde' : '#8DC1EF'}>
           {rowCount}
-        </Button>
-        <Button
-          variant="contained"
-          style={{
-            borderRadius: "25px",
-            marginLeft: 15,
-          }}
+        </Typography>
+        <Button variant="contained"
+          style={{ borderRadius: "25px" }}
           onClick={() => handleAdjustRows("+")}
         >
           +
         </Button>
-      </Grid>
+      </Stack>
       <Grid item>
-        <Button
-          variant="contained"
+        <Button variant="contained"
           style={{
             textTransform: "capitalize",
             height: "50px",
@@ -89,25 +68,20 @@ const RandomMeal = () => {
           {!randomData.length ? "Random" : "Try Again"}
         </Button>
       </Grid>
-      <Card elevation={2} sx={{ borderRadius: 10, p: 2 }}>
-        {randomData.map((item, index) => (
-          <Typography fontSize="25px" key={index}>
-            <RestaurantMenu sx={{ mr: 1 }} />
-            {item.title}
-          </Typography>
-        ))}
-      </Card>
+      {!!randomData.length &&
+        <Card elevation={2} sx={{ borderRadius: 4, p: 2 }}>
+          {randomData.map((item, index) => (
+            <Typography fontSize="25px" key={index}>
+              <RestaurantMenu sx={{ mr: 1 }} />
+              {item.title}
+            </Typography>
+          ))}
+        </Card>}
 
-      <Button
-        variant="contained"
-        style={{
-          borderRadius: "25px",
-        }}
-        onClick={handleClearData}
-      >
+      <Button variant="contained" style={{ borderRadius: "25px" }} onClick={handleClearData} >
         Clear Data
       </Button>
-    </Grid>
+    </Stack>
   );
 };
 

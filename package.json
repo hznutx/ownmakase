@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/ownmakase",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -15,7 +15,6 @@
     "@fontsource/kanit": "^4.5.10",
     "@lottiefiles/lottie-js": "^0.4.1",
     "@lottiefiles/react-lottie-player": "^3.5.3",
-    "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.0",
     "@react-spring/web": "^9.7.2",

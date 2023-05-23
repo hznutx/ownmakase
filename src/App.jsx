@@ -13,11 +13,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={<Intro />} />
-        <Route path="home" element={<AppLayout />} >
+        <Route path="app" element={<AppLayout />} >
           <Route path="" element={<Home />} />
           <Route path="menu" element={<MenuPage />} />
-          {/* <Route path="random-food" element={<RandomFood />} /> */}
-          {/* <Route path="shoppinglist" element={<ShoppingList />} /> */}
+          <Route path="random-food" element={<RandomFood />} />
+          <Route path="shoppinglist" element={<ShoppingList />} />
         </Route>
       </Routes>
     </ThemeProvider>

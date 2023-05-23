@@ -34,57 +34,44 @@ const GridThemeItem = createTheme({
 
 const Home = () => {
   return (
-    <Stack sx={{ flexGrow: 1 }}>
-      <Container>
-        <Grid my={6}>
-          <SearchBar />
-        </Grid>
-        <Typography variant="h5" my={5}>
+    <Container>
+      <Stack gap={2}>
+        <SearchBar />
+        <Typography variant="h5" >
           What Would You like ?
         </Typography>
         <Box>
           <ThemeProvider theme={GridThemeItem}>
-            <Grid container
-              spacing={2}
-              columns={{ xs: 2, sm: 8, md: 12 }}
-              padding={5}
-            >
-              <Grid
-                item
-                xs={2}
-                sm={4}
-                md={6}
-                component={Link}
-                to="/random-food"
-              >
+            <Grid container spacing={2} columns={{ xs: 2, sm: 8, md: 12 }} padding={5} >
+              <Grid item xs={2} sm={4} md={6} component={Link} to="/app/random-food" >
                 <img src={Random} width="100%" />
-                <Typography variant="h6" my={3}>
+                <Typography variant="h6">
                   Random Daily meal
                 </Typography>
               </Grid>
               <Grid item xs component={Link} to="/shoppinglist">
                 <img src={ShoppingPic} width="100%" />
-                <Typography variant="h6" my={3}>
+                <Typography variant="h6" >
                   Shopping List
                 </Typography>
               </Grid>
               <Grid item xs={2} sm={4} md={6} component={Link}>
                 <img src={Bag} width="100%" />
-                <Typography variant="h6" my={3}>
+                <Typography variant="h6" >
                   Inhouse item
                 </Typography>
               </Grid>
               <Grid item xs component={Link} to="/menu">
                 <img src={RecipePic} width="100%" />
-                <Typography variant="h6" my={3}>
+                <Typography variant="h6">
                   Recipes
                 </Typography>
               </Grid>
             </Grid>
           </ThemeProvider>
         </Box>
-      </Container>
-    </Stack>
+      </Stack>
+    </Container>
   );
 };
 

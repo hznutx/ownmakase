@@ -1,19 +1,9 @@
-import {
-  Card,
-  CardContent,
-  Chip,
-  Divider,
-  Grid,
-  ListItem,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, Chip, Divider, Grid, ListItem, Stack, Typography, CardActionArea } from "@mui/material";
 import Recipepic from "../assets/image/Recipes.png";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import Searchbar from "../component/Searchbar";
 import { Player } from "@lottiefiles/react-lottie-player";
-import { CardActionArea } from "@material-ui/core";
 import { useState } from "react";
 
 const Menu = () => {

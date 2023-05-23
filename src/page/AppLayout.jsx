@@ -7,7 +7,7 @@ const AppLayout = () => {
     return (
         <Stack>
             <Navbar />
-            <Box mt={5}>
+            <Box my={11}>
                 <Outlet />
             </Box>
             <Footer />
