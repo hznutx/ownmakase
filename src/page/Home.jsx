@@ -32,6 +32,17 @@ const GridThemeItem = createTheme({
   },
 });
 
+const MenuGrid = ({ path, menuImg, menuTitle }) => {
+  return (
+    <Grid item xs={2} sm={4} md={6} component={Link} to={path} >
+      <img src={menuImg} width="100%" />
+      <Typography variant="h6">
+        {menuTitle}
+      </Typography>
+    </Grid>
+  )
+}
+
 const Home = () => {
   return (
     <Container>
@@ -43,30 +54,10 @@ const Home = () => {
         <Box>
           <ThemeProvider theme={GridThemeItem}>
             <Grid container spacing={2} columns={{ xs: 2, sm: 8, md: 12 }} padding={5} >
-              <Grid item xs={2} sm={4} md={6} component={Link} to="/app/random-food" >
-                <img src={Random} width="100%" />
-                <Typography variant="h6">
-                  Random Daily meal
-                </Typography>
-              </Grid>
-              <Grid item xs component={Link} to="/shoppinglist">
-                <img src={ShoppingPic} width="100%" />
-                <Typography variant="h6" >
-                  Shopping List
-                </Typography>
-              </Grid>
-              <Grid item xs={2} sm={4} md={6} component={Link}>
-                <img src={Bag} width="100%" />
-                <Typography variant="h6" >
-                  Inhouse item
-                </Typography>
-              </Grid>
-              <Grid item xs component={Link} to="/menu">
-                <img src={RecipePic} width="100%" />
-                <Typography variant="h6">
-                  Recipes
-                </Typography>
-              </Grid>
+              <MenuGrid path='/app/random-food' menuImg={Random} menuTitle={'Random Daily meal'} />
+              <MenuGrid path='/app/shopping-list' menuImg={ShoppingPic} menuTitle={'Shopping List'} />
+              <MenuGrid menuImg={Bag} menuTitle={'In house item'} />
+              <MenuGrid menuImg={RecipePic} menuTitle={'Recipes'} />
             </Grid>
           </ThemeProvider>
         </Box>

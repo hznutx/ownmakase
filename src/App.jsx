@@ -17,7 +17,7 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="menu" element={<MenuPage />} />
           <Route path="random-food" element={<RandomFood />} />
-          <Route path="shoppinglist" element={<ShoppingList />} />
+          <Route path="shopping-list" element={<ShoppingList />} />
         </Route>
       </Routes>
     </ThemeProvider>
