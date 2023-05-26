@@ -54,17 +54,17 @@ function Intro() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Button component={Link} to="/app/menu" variant="outlined">
+                <Button component={Link} to="/app/page-menu" variant="outlined">
                   Menu
                 </Button>
               </Grid>
               <Grid item>
-                <Button component={Link} to="/app/random-food" variant="outlined">
+                <Button component={Link} to="/app/page-random" variant="outlined">
                   Random
                 </Button>
               </Grid>
               <Grid item>
-                <Button component={Link} to="/app/shoppinglist" variant="outlined">
+                <Button component={Link} to="/app/page-shop-list" variant="outlined">
                   Shopping List
                 </Button>
               </Grid>
@@ -122,7 +122,7 @@ function Intro() {
             <br />
             <Button
               component={Link}
-              to="/app/menu"
+              to="/app/page-menu"
               variant="contained"
               sx={{ mr: 3, background: "#465670" }}
             >
