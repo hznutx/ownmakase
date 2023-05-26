@@ -15,9 +15,9 @@ function App() {
         <Route path="/" element={<Intro />} />
         <Route path="app" element={<AppLayout />} >
           <Route path="" element={<Home />} />
-          <Route path="menu" element={<MenuPage />} />
-          <Route path="random-food" element={<RandomFood />} />
-          <Route path="shopping-list" element={<ShoppingList />} />
+          <Route path="page-menu" element={<MenuPage />} />
+          <Route path="page-random" element={<RandomFood />} />
+          <Route path="page-shop-list" element={<ShoppingList />} />
         </Route>
       </Routes>
     </ThemeProvider>
