@@ -58,6 +58,7 @@ export default function Searchbar() {
       <StyledInputBase
         placeholder="Search…"
         inputProps={{ "aria-label": "search" }}
+        fullWidth
       />
     </Search>
   );
