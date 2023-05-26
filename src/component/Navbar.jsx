@@ -1,144 +1,68 @@
-import * as React from "react";
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  IconButton,
-  Typography,
-  Badge,
-  ListItem,
-  ListItemIcon,
-  ListItemButton,
-  ListItemText,
-  Drawer,
-} from "@mui/material";
-import { AccountCircle, Menu as MenuIcon } from "@mui/icons-material";
-import KitchenIcon from "@mui/icons-material/Kitchen";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import Logo from "../image/Logo.png";
+import { AppBar, Box, Toolbar, IconButton, Typography, Badge, ListItem, ListItemIcon, ListItemButton, ListItemText, Drawer, Stack, } from "@mui/material";
+import { AccountCircle, Menu as MenuIcon, Kitchen, ShoppingCart, BookmarkBorder, Settings } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import theme from "../theme";
+import Logo from "../assets/image/Logo.png";
+
+const listRightMenu = [
+  { name: "Account", icon: <AccountCircle /> },
+  { name: "Setting", icon: <Settings /> },
+];
 
 const Navbar = () => {
-  const [state, setState] = React.useState({ right: false });
+  const [open, setOpen] = useState(false)
+  // const [open, setState] = useState(false);
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    setState({ ...state, [anchor]: open });
-  };
+  // const toggleDrawer = (anchor, open) => (event) => {
+  //   if (
+  //     event.type === "keydown" &&
+  //     (event.key === "Tab" || event.key === "Shift")
+  //   ) {
+  //     return;
+  //   }
+  //   setState({ ...state, [anchor]: open });
+  // };
 
-  const list = (anchor) => (
-    <Box
-      sx={{
-        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-        height: "100vh",
-        background: "white",
-      }}
-      role="navigation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      {["Account", "Bookmark", "Inhouse Item", "My Cart"].map((text, index) => (
-        <ListItem key={text}>
+  const toggle = () => setOpen(prev => !prev)
+
+  const listMenu = () => (
+    <Box height={'100vh'} width={250} bgcolor={'white'} onClick={toggle}>
+      {listRightMenu.map((thisMenu, index) => (
+        <ListItem key={index}>
           <ListItemButton>
             <ListItemIcon>
-              {index % 4 === 0 ? (
-                <AccountCircle />
-              ) : index % 4 === 1 ? (
-                <BookmarkBorderIcon />
-              ) : index % 4 === 2 ? (
-                <KitchenIcon />
-              ) : (
-                <ShoppingCartIcon />
-              )}
+              {thisMenu.icon}
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={thisMenu.name} />
           </ListItemButton>
         </ListItem>
       ))}
     </Box>
   );
 
-  const anchor = "right";
-
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        top: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: "white",
-      }}
-    >
-      <Drawer
-        anchor={anchor}
-        open={state[anchor]}
-        onClose={toggleDrawer(anchor, false)}
-        style={theme}
-      >
-        {list(anchor)}
+    <Box>
+      <Drawer anchor={'right'} open={open} onClose={toggle} style={theme} >
+        {listMenu()}
       </Drawer>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar position="fixed">
+        <Toolbar >
           <Box component={Link} to="/">
             <img src={Logo} width={55} />
           </Box>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-            }}
-          >
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{
-                display: { xs: "none", sm: "flex" },
-                textTransform: "uppercase",
-                justifyContent: "center",
-                alignItems: "center",
-                justifyItems: "center",
-                letterSpacing: "2px",
-              }}
-            >
+          <Box flexGrow={1}  >
+            <Typography variant="h6" textAlign="center" textTransform="uppercase" letterSpacing="2px">
               Ownmakase
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error"></Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              color="inherit"
-              onClick={toggleDrawer(anchor, true)}
-            >
+          <Stack>
+            <IconButton size="large" color="inherit" onClick={toggle}>
               <Badge badgeContent={4} color="error">
                 <MenuIcon />
               </Badge>
             </IconButton>
-          </Box>
+          </Stack>
         </Toolbar>
       </AppBar>
     </Box>
