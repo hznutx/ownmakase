@@ -11,4 +11,13 @@ const getAllFoodMenu = ({ limit }) => {
     });
 }
 
-export { getAllFoodMenu }
+const removeFoodMenu = (data) => {
+    return new Promise(async (resolve, reject) => {
+        await axios
+            .delete(`/v1/food-menu`, { data })
+            .then(async (res) => resolve(res.data))
+            .catch((err) => reject(err));
+    });
+}
+
+export { getAllFoodMenu, removeFoodMenu }
