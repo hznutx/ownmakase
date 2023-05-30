@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { Player } from "@lottiefiles/react-lottie-player";
-import RandomMeal from "../component/Randommeal";
+import RandomMeal from "../components/Randommeal";
 
 const RandomMode = () => {
   return (

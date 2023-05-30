@@ -1,11 +1,14 @@
 {
   "name": "ownmakase",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev-uneemo": "vite --mode uneemo",
+    "dev-vpn": "vite --mode vpn",
     "build": "vite build --base=/ownmakase",
+    "build-vpn": "vite build --mode vpn --base=/ownmakase",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

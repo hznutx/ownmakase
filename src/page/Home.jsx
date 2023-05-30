@@ -2,7 +2,7 @@ import { Box, Container, Grid, Stack, Typography, createTheme, } from "@mui/mate
 import { ThemeProvider } from "@emotion/react";
 import { Link } from "react-router-dom";
 // 
-import SearchBar from "../component/Searchbar";
+import SearchBar from "../components/Searchbar";
 import Random from "../assets/image/choice.png";
 import ShoppingPic from "../assets/image/Shoppingpic.png";
 import Bag from "../assets/image/bag.png";

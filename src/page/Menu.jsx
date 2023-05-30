@@ -1,6 +1,6 @@
 import { Card, CardContent, Chip, Divider, Grid, ListItem, Stack, Typography, CardActionArea, Box } from "@mui/material";
 import Recipepic from "../assets/image/Recipes.png";
-import Searchbar from "../component/Searchbar";
+import Searchbar from "../components/Searchbar";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useState } from "react";
 
