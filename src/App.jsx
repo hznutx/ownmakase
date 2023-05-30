@@ -7,6 +7,7 @@ import MenuPage from "./page/Menu";
 import RandomFood from "./page/Random";
 import ShoppingList from "./page/Goshopping";
 import AppLayout from "./page/AppLayout";
+import UneemoTestEnv from "./page/uneemo/UneemoTestEnv.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="page-menu" element={<MenuPage />} />
           <Route path="page-random" element={<RandomFood />} />
           <Route path="page-shop-list" element={<ShoppingList />} />
+          <Route path="uneemo-test-env" element={<UneemoTestEnv />} />
         </Route>
       </Routes>
     </ThemeProvider>
